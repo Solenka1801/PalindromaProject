@@ -173,19 +173,14 @@ public class Interfaz extends javax.swing.JFrame {
             }
         }
 
-//        for (int i = 0; i < resultado.length; i++) {
-//            cadenaResultado += resultado[i] + " ";
+
     }
 
     public String recorrer(int i, String[] resultado, String cadenaResultado) {
         if (i > resultado.length - 1) {
             return cadenaResultado;
 
-        } /*else if(i==10) {
-             cadenaResultado += resultado[i] + "\n";
-             
-            return recorrer(i + 1, resultado, cadenaResultado);
-        }*/ else {
+        } else {
             cadenaResultado += resultado[i] + " ";
             return recorrer(i + 1, resultado, cadenaResultado);
 
@@ -203,7 +198,7 @@ public class Interfaz extends javax.swing.JFrame {
                 chooser.showSaveDialog(null);
                 resultadoGenerado = chooser.getSelectedFile().getAbsolutePath();
                 Persistencia.escribirArchivo(resultadoGenerado + "\\resultado.txt", cadenaResultado, false);
-                JOptionPane.showMessageDialog(null,"Archivo generado exitosamente.");// "Archivo generado en : " + resultadoGenerado + "\\resultado.txt");
+                JOptionPane.showMessageDialog(null,"Archivo generado exitosamente.");
                 rutaArchivo.setText(resultadoGenerado + "\\resultado.txt");
             } catch (IOException ex) {
                 System.out.println(ex.getMessage());
